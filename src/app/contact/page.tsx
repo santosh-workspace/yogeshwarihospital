@@ -17,7 +17,7 @@ import { BookAppointmentButton } from "@/components/booking/BookAppointmentButto
 
 export const metadata: Metadata = {
   title: `Contact Yogeshwari Hospital — ${siteConfig.city}`,
-  description: `Contact Yogeshwari Hospital in ${siteConfig.city}: address, phone, WhatsApp, OPD timings and directions. Paediatrics and eye care appointments.`,
+  description: `Contact Yogeshwari Hospital (Yogeshwari Surgical) in ${siteConfig.city}: address, phone, WhatsApp, OPD timings and directions. Dr. Ramdas Nagargoje — paediatric surgery — and eye care appointments.`,
   alternates: { canonical: "/contact" },
 };
 

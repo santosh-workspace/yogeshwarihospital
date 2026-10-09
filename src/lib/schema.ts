@@ -124,7 +124,7 @@ export function hospitalSchema() {
     "@type": ["Hospital", "MedicalOrganization", "LocalBusiness"],
     "@id": ids.hospital,
     name: siteConfig.name,
-    alternateName: [siteConfig.legalName, siteConfig.gbpName],
+    alternateName: [siteConfig.legalName, siteConfig.gbpName, ...siteConfig.alternateNames],
     description: siteConfig.shortDescription,
     slogan: siteConfig.tagline,
     url: siteConfig.url,
@@ -206,6 +206,45 @@ export function physicianSchema(slug: string) {
       "@type": "MedicalProcedure",
       name: s.name,
     })),
+  };
+}
+
+/**
+ * Person node for a verified doctor. The `Physician` node above describes the
+ * practice entity; this one describes the human being — the association is
+ * verified (both doctors run departments at this hospital and the hospital's
+ * own Google Business Profile listing carries Dr. Ramdas Nagargoje's name),
+ * and every field mirrors visible page content. Only verified fields: no
+ * awards, no outcome claims, no invented identifiers.
+ */
+export function personSchema(slug: string) {
+  const doc = doctors.find((d) => d.slug === slug);
+  if (!doc) return null;
+
+  return {
+    "@type": "Person",
+    "@id": abs(`doctors#${slug}-person`),
+    name: doc.name,
+    honorificPrefix: doc.honorific,
+    jobTitle: doc.role,
+    description: doc.bio[0],
+    url: abs(`doctors#${doc.slug}`),
+    image: abs(doc.photo.replace(/^\//, "")),
+    knowsLanguage: doc.languages,
+    knowsAbout: doc.specializations,
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "degree",
+      name: doc.qualification,
+    },
+    identifier: {
+      "@type": "PropertyValue",
+      name: "Medical Council Registration",
+      value: doc.registration,
+    },
+    worksFor: { "@id": ids.hospital },
+    address: postalAddress,
+    telephone: siteConfig.contact.phoneE164,
   };
 }
 

@@ -13,15 +13,15 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { faqsGeneral } from "@/config/content";
 import { siteConfig } from "@/config/site";
-import { faqSchema, graph, medicalClinicSchema, physicianSchema } from "@/lib/schema";
+import { faqSchema, graph, medicalClinicSchema, personSchema, physicianSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.tagline} in ${siteConfig.city}`,
-  description: `Yogeshwari Hospital — paediatric surgeon and eye specialist in ${siteConfig.city}. Newborn and child surgery, paediatric urology, comprehensive eye examination, cataract and glaucoma screening. Book an appointment online.`,
+  title: `${siteConfig.name} | Dr. Ramdas Nagargoje | ${siteConfig.city}`,
+  description: `Official website of Yogeshwari Hospital (Yogeshwari Surgical) in ${siteConfig.city} — paediatric surgery by Dr. Ramdas Nagargoje, eye care by Dr. Manisha Nagargoje, location, timings and appointments.`,
   alternates: { canonical: "/" },
   openGraph: {
     url: siteConfig.url,
-    title: `${siteConfig.name} | ${siteConfig.tagline} in ${siteConfig.city}`,
+    title: `${siteConfig.name} | Dr. Ramdas Nagargoje | ${siteConfig.tagline} in ${siteConfig.city}`,
     description: siteConfig.shortDescription,
   },
 };
@@ -33,6 +33,8 @@ export default function HomePage() {
         data={graph(
           physicianSchema("dr-ramdas-nagargoje"),
           physicianSchema("dr-manisha-nagargoje"),
+          personSchema("dr-ramdas-nagargoje"),
+          personSchema("dr-manisha-nagargoje"),
           medicalClinicSchema("pediatric-surgery"),
           medicalClinicSchema("eye-care"),
           faqSchema(faqsGeneral),

@@ -76,6 +76,13 @@ export const metadata: Metadata = {
     "constipation clinic",
     "cataract consultation",
     "Yogeshwari Hospital",
+    "Yogeshwari Surgical",
+    "Yogeshwari Surgical Hospital",
+    "Yogeshwari Hospital Chhatrapati Sambhajinagar",
+    "Dr Ramdas Nagargoje",
+    "Dr. Ramdas Nagargoje",
+    "Dr. Ramdas Nagargoje Yogeshwari Hospital",
+    "Dr. Ramdas D. Nagargoje paediatric surgeon",
   ],
   category: "Health",
   alternates: {

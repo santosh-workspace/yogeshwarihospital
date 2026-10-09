@@ -11,14 +11,14 @@ import { Reveal, Stagger } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { departments } from "@/config/content";
 import { doctors, links, siteConfig } from "@/config/site";
-import { breadcrumbSchema, graph, physicianSchema } from "@/lib/schema";
+import { breadcrumbSchema, graph, personSchema, physicianSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 import { BookAppointmentButton } from "@/components/booking/BookAppointmentButton";
 import { ButtonRow } from "@/components/ui/ButtonRow";
 
 export const metadata: Metadata = {
-  title: `Our Doctors — Paediatric Surgeon & Eye Specialist in ${siteConfig.city}`,
-  description: `Meet the specialists at Yogeshwari Hospital: Dr. Ramdas D. Nagargoje (Paediatric Surgeon) and Dr. Manisha Nagargoje (Sanap), Ophthalmologist, in ${siteConfig.city}. Qualifications, experience, timings and booking.`,
+  title: `Dr. Ramdas Nagargoje | Paediatric Surgeon, ${siteConfig.city}`,
+  description: `Learn about Dr. Ramdas Nagargoje, Paediatric Surgeon, and Dr. Manisha Nagargoje (Sanap), Ophthalmologist, at ${siteConfig.name} (Yogeshwari Surgical), ${siteConfig.city}. Find official contact and appointment information.`,
   alternates: { canonical: "/doctors" },
 };
 
@@ -34,6 +34,8 @@ export default function DoctorsPage() {
         data={graph(
           physicianSchema("dr-ramdas-nagargoje"),
           physicianSchema("dr-manisha-nagargoje"),
+          personSchema("dr-ramdas-nagargoje"),
+          personSchema("dr-manisha-nagargoje"),
           breadcrumbSchema(crumbs),
         )}
       />

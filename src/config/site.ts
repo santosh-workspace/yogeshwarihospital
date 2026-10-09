@@ -21,6 +21,15 @@ export const siteConfig = {
    * local-ranking factor and the listing name is longer than our display name.
    */
   gbpName: "Yogeshwari Hospital - Ramdas Nagargoje (Eye And Pediatric Surgery)",
+  /**
+   * Public-facing name variations for the SAME organization — not separate
+   * businesses. "Yogeshwari Surgical" is the hospital's own shorthand (it is
+   * their domain, yogeshwarisurgical.com); "Yogeshwari Surgical Hospital" is
+   * the natural combined form patients use. Emitted as `alternateName` in
+   * schema and used for brand-query titles. The registered name is unverified;
+   * the GBP listing name above is the closest official public record.
+   */
+  alternateNames: ["Yogeshwari Surgical", "Yogeshwari Surgical Hospital"],
   tagline: "Eye and Pediatric Surgery Centre",
   shortDescription:
     "A dedicated eye and paediatric surgery centre in Chhatrapati Sambhajinagar, bringing specialist child health and advanced eye care under one roof.",

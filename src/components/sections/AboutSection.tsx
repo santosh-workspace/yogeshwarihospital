@@ -51,7 +51,10 @@ export function AboutSection() {
                   So the hospital runs two departments side by side. Paediatric surgery,
                   led by Dr. Ramdas D. Nagargoje, M.Ch., and eye care, led by
                   Dr. Manisha Nagargoje (Sanap), D.O.M.S. Same building, same records,
-                  same day where it can be arranged.
+                  same day where it can be arranged. Our website address is
+                  yogeshwarisurgical.com, so the hospital is also known as
+                  Yogeshwari Surgical or Yogeshwari Surgical Hospital — the same
+                  hospital and the same two doctors.
                 </p>
               </Reveal>
               <Reveal child variant="up">
