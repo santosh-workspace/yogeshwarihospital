@@ -4,8 +4,12 @@ import { animate, useInView, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Counts up once, when scrolled into view. Renders the final value straight
- * away for reduced-motion users so the number is never missing.
+ * Counts up once, when scrolled into view.
+ *
+ * The final value is rendered into the SSR HTML (not zero), so crawlers and
+ * no-JS users always see the true figure; the count-up is purely a
+ * client-side enhancement that replays from zero when scrolled into view.
+ * Reduced-motion users keep the static final value.
  */
 export function Counter({
   value,
@@ -21,7 +25,9 @@ export function Counter({
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "0px 0px -15% 0px" });
   const reduced = useReducedMotion();
-  const [display, setDisplay] = useState(reduced ? value : 0);
+  /* Final value first: SSR and first paint show the truth, the animation
+     replays from zero only after hydration + scroll into view. */
+  const [display, setDisplay] = useState(value);
 
   useEffect(() => {
     if (!inView || reduced) return;

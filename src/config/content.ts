@@ -312,14 +312,17 @@ export const differentiators = [
 ];
 
 /**
- * TODO: confirm these figures before publishing.
- * The year counts are inferred from the doctors' state registration years
- * (2002 and 2004), so they are conservative rather than exact.
+ * Homepage counters. Every figure is derived from verified site data — no
+ * inferred experience years, patient counts, or surgery totals:
+ * - 2 departments (`departments` below), 12 + 8 departmental services
+ *   (counted from the service lists in this file), 6-day OPD (siteConfig.hours).
+ * Per-doctor experience wording lives only beside the doctors' own displayed
+ * credentials and is flagged for owner confirmation — it is not a counter.
  */
 export const stats = [
-  { value: 20, suffix: "+", label: "Years in paediatric surgery" },
-  { value: 20, suffix: "+", label: "Years in ophthalmology" },
+  { value: 2, suffix: "", label: "Specialist departments, one roof" },
   { value: 12, suffix: "", label: "Paediatric surgical services" },
+  { value: 8, suffix: "", label: "Eye-care services" },
   { value: 6, suffix: "", label: "Days a week OPD" },
 ];
 
