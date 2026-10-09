@@ -47,11 +47,11 @@ import drManisha from "../../public/images/doctors/dr-manisha-nagargoje.png";
 export const img = {
   heroHospital: {
     src: heroHospital,
-    alt: "Yogeshwari Hospital — the Eye and Pediatric Surgery Centre building in Chhatrapati Sambhajinagar",
+    alt: "Modern hospital building exterior — representative photograph",
   },
   hospitalExterior: {
     src: hospitalExterior,
-    alt: "The Yogeshwari Hospital building on Beed Bypass, Sangram Nagar",
+    alt: "Hospital building exterior — representative photograph",
   },
   ward: {
     src: ward,
@@ -79,7 +79,7 @@ export const img = {
   },
   pediatricExam: {
     src: pediatricExam,
-    alt: "A paediatrician examining a young child during a consultation",
+    alt: "A paediatric surgeon examining a young child during a consultation",
   },
   childHappy: {
     src: childHappy,

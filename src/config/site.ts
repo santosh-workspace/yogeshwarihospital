@@ -25,16 +25,16 @@ export const siteConfig = {
   shortDescription:
     "A dedicated eye and paediatric surgery centre in Chhatrapati Sambhajinagar, bringing specialist child health and advanced eye care under one roof.",
 
-  /** TODO: replace with the live domain before deploying. Used for canonicals, OG, sitemap. */
-  url: "https://yogeshwarihospital.com",
+  /** Production domain. Used for canonicals, OG, sitemap, schema @ids. */
+  url: "https://www.yogeshwarisurgical.com",
 
   /** TODO: confirm against the Google Business Profile. */
   contact: {
-    phoneDisplay: "+91 00000 00000",
+    phoneDisplay: "+91 98603 29675",
     /** E.164, no spaces — used in tel: links */
-    phoneE164: "+910000000000",
+    phoneE164: "+919860329675",
     /** Digits only, country code first — used in wa.me links */
-    whatsapp: "910000000000",
+    whatsapp: "919860329675",
     email: "care@yogeshwarihospital.com",
   },
 

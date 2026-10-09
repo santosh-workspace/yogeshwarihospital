@@ -43,7 +43,7 @@ export function DoctorsSection() {
                         src={doc.image}
                         alt={
                           doc.slug === "dr-ramdas-nagargoje"
-                            ? "Portrait of Dr. Ramdas D. Nagargoje, Paediatrician"
+                            ? "Portrait of Dr. Ramdas D. Nagargoje, Paediatric Surgeon"
                             : "Portrait of Dr. Manisha Nagargoje (Sanap), Ophthalmologist"
                         }
                         fill

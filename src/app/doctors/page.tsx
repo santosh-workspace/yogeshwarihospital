@@ -17,8 +17,8 @@ import { BookAppointmentButton } from "@/components/booking/BookAppointmentButto
 import { ButtonRow } from "@/components/ui/ButtonRow";
 
 export const metadata: Metadata = {
-  title: `Our Doctors — Paediatrician & Eye Specialist in ${siteConfig.city}`,
-  description: `Meet the specialists at Yogeshwari Hospital: Dr. Ramdas D. Nagargoje (Paediatrician) and Dr. Manisha Nagargoje (Sanap), Ophthalmologist, in ${siteConfig.city}. Qualifications, experience, timings and booking.`,
+  title: `Our Doctors — Paediatric Surgeon & Eye Specialist in ${siteConfig.city}`,
+  description: `Meet the specialists at Yogeshwari Hospital: Dr. Ramdas D. Nagargoje (Paediatric Surgeon) and Dr. Manisha Nagargoje (Sanap), Ophthalmologist, in ${siteConfig.city}. Qualifications, experience, timings and booking.`,
   alternates: { canonical: "/doctors" },
 };
 

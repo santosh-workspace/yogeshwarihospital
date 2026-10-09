@@ -17,7 +17,7 @@ import { faqSchema, graph, medicalClinicSchema, physicianSchema } from "@/lib/sc
 
 export const metadata: Metadata = {
   title: `${siteConfig.tagline} in ${siteConfig.city}`,
-  description: `Yogeshwari Hospital — paediatrician and eye specialist in ${siteConfig.city}. Child health, vaccination, newborn care, comprehensive eye examination, cataract and glaucoma screening. Book an appointment online.`,
+  description: `Yogeshwari Hospital — paediatric surgeon and eye specialist in ${siteConfig.city}. Newborn and child surgery, paediatric urology, comprehensive eye examination, cataract and glaucoma screening. Book an appointment online.`,
   alternates: { canonical: "/" },
   openGraph: {
     url: siteConfig.url,
