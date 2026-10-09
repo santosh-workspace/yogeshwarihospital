@@ -256,7 +256,7 @@ export function BookingForm({
               >
                 <Image
                   src={doc.image}
-                  alt=""
+                  alt={`Portrait of ${doc.name}`}
                   width={44}
                   height={44}
                   className="size-11 shrink-0 rounded-xl object-cover object-top"

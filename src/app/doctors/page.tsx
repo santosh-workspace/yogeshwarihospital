@@ -17,9 +17,17 @@ import { BookAppointmentButton } from "@/components/booking/BookAppointmentButto
 import { ButtonRow } from "@/components/ui/ButtonRow";
 
 export const metadata: Metadata = {
-  title: `Dr. Ramdas Nagargoje | Paediatric Surgeon, ${siteConfig.city}`,
-  description: `Learn about Dr. Ramdas Nagargoje, Paediatric Surgeon, and Dr. Manisha Nagargoje (Sanap), Ophthalmologist, at ${siteConfig.name} (Yogeshwari Surgical), ${siteConfig.city}. Find official contact and appointment information.`,
+  title: "Dr Ramdas Nagargoje (Child Surgeon)",
+  description:
+    "Doctors at Yogeshwari Hospital, Aurangabad: Dr. Ramdas Nagargoje (paediatric surgeon) & Dr. Manisha Nagargoje (eye specialist).",
   alternates: { canonical: "/doctors" },
+  openGraph: {
+    title: "Dr Ramdas Nagargoje, Paediatric Surgeon | Yogeshwari Hospital",
+    description:
+      "Meet Dr. Ramdas Nagargoje and Dr. Manisha Nagargoje — qualifications, timings and booking in Chhatrapati Sambhajinagar.",
+    url: `${siteConfig.url}/doctors`,
+    images: [`${siteConfig.url}/opengraph-image`],
+  },
 };
 
 const crumbs = [

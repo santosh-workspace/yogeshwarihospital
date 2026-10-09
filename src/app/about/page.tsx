@@ -14,9 +14,17 @@ import { siteConfig } from "@/config/site";
 import { breadcrumbSchema, graph } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: `About Yogeshwari Hospital — ${siteConfig.city}`,
-  description: `Yogeshwari Hospital (Yogeshwari Surgical) is an eye and paediatric surgery centre in ${siteConfig.city}, run by Dr. Ramdas D. Nagargoje and Dr. Manisha Nagargoje (Sanap). Two specialities, one waiting room.`,
+  title: "About Yogeshwari Surgical, Aurangabad",
+  description:
+    "About Yogeshwari Surgical Hospital, Beed Bypass, Chhatrapati Sambhajinagar (Aurangabad) — paediatric surgery & eye care under one roof.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Yogeshwari Surgical, Aurangabad",
+    description:
+      "Eye and paediatric surgery centre in Chhatrapati Sambhajinagar — two specialists, one family practice.",
+    url: `${siteConfig.url}/about`,
+    images: [`${siteConfig.url}/opengraph-image`],
+  },
 };
 
 const crumbs = [

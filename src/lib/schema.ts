@@ -274,6 +274,22 @@ export function medicalClinicSchema(slug: "pediatric-surgery" | "eye-care") {
   };
 }
 
+export function medicalWebPageSchema(slug: "pediatric-surgery" | "eye-care") {
+  const dept = departments.find((d) => d.slug === slug)!;
+
+  return {
+    "@type": "MedicalWebPage",
+    "@id": abs(`departments/${slug}#webpage`),
+    url: abs(`departments/${slug}`),
+    name: dept.metaTitle,
+    description: dept.metaDescription,
+    inLanguage: "en-IN",
+    about: { "@id": ids.department(slug) },
+    isPartOf: { "@id": ids.website },
+    publisher: { "@id": ids.organization },
+  };
+}
+
 export function websiteSchema() {
   return {
     "@type": "WebSite",

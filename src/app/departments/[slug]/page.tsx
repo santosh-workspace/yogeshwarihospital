@@ -14,6 +14,7 @@ import {
   faqSchema,
   graph,
   medicalClinicSchema,
+  medicalWebPageSchema,
   physicianSchema,
 } from "@/lib/schema";
 
@@ -38,9 +39,17 @@ export async function generateMetadata({
     description: dept.metaDescription,
     alternates: { canonical: `/departments/${dept.slug}` },
     openGraph: {
-      title: `${dept.name} | ${siteConfig.name}`,
+      title: `${dept.metaTitle} | ${siteConfig.name}`,
       description: dept.metaDescription,
       url: `${siteConfig.url}/departments/${dept.slug}`,
+      images: [
+        {
+          url: `${siteConfig.url}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${dept.name} at ${siteConfig.name}, ${siteConfig.city}`,
+        },
+      ],
     },
   };
 }
@@ -67,6 +76,7 @@ export default async function DepartmentPage({
     <>
       <JsonLd
         data={graph(
+          medicalWebPageSchema(dept.slug),
           medicalClinicSchema(dept.slug),
           physicianSchema(doctor.slug),
           faqSchema(faqs),
@@ -79,7 +89,8 @@ export default async function DepartmentPage({
         segments={[
           { text: dept.name.split(" ")[0] },
           { text: dept.name.split(" ").slice(1).join(" ") || "Care", accent: true },
-          { text: `in ${siteConfig.city}` },
+          // Old city name in parentheses: many patients still search "Aurangabad".
+          { text: `in ${siteConfig.city} (${siteConfig.cityAlt})` },
         ]}
         lead={dept.intro}
         crumbs={crumbs}

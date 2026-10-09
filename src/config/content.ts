@@ -152,8 +152,9 @@ export const departments: Department[] = [
         image: img.childHappy,
       },
     ],
-    metaTitle: `Paediatric Surgeon in ${siteConfig.city} | Child Surgery`,
-    metaDescription: `Paediatric surgery in ${siteConfig.city} — newborn and infant surgery, laparoscopic procedures, paediatric urology, urodynamics, constipation clinic and emergency child surgery with Dr. Ramdas D. Nagargoje, M.Ch. (Paediatric Surgery).`,
+    metaTitle: "Paediatric Surgeon in Aurangabad",
+    metaDescription:
+      "Paediatric surgeon in Chhatrapati Sambhajinagar (Aurangabad): newborn surgery, laparoscopy, urology. Dr. Ramdas Nagargoje, M.Ch.",
   },
   {
     slug: "eye-care",
@@ -231,8 +232,9 @@ export const departments: Department[] = [
         image: img.svcChildVision,
       },
     ],
-    metaTitle: `Eye Specialist in ${siteConfig.city} | Ophthalmologist`,
-    metaDescription: `Eye care in ${siteConfig.city} — comprehensive eye examination, vision testing, cataract consultation, glaucoma and diabetic eye screening with Dr. Manisha Nagargoje (Sanap), D.O.M.S.`,
+    metaTitle: "Eye Hospital in Aurangabad",
+    metaDescription:
+      "Eye hospital in Chhatrapati Sambhajinagar (Aurangabad): exams, cataract, glaucoma & diabetic screening. Dr. Manisha Nagargoje.",
   },
 ];
 

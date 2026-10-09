@@ -5,9 +5,13 @@ import { siteConfig } from "@/config/site";
 /**
  * Priorities reflect conversion value, not page count: the appointment page and
  * the two department pages are what local search should surface first.
+ *
+ * No `lastModified` is emitted: a build-time `new Date()` would stamp every
+ * URL as "changed" on every deploy, which teaches crawlers to ignore the
+ * signal. Reintroduce per-URL dates only if they are tied to real content
+ * edits (e.g. a content-updated timestamp per route).
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   const url = (path: string) => new URL(path, siteConfig.url).toString();
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -26,8 +30,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticRoutes, ...departmentRoutes].map((entry) => ({
-    ...entry,
-    lastModified: now,
-  }));
+  return [...staticRoutes, ...departmentRoutes];
 }

@@ -18,9 +18,17 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: `Book an Appointment — Paediatric Surgery & Eye Care, ${siteConfig.city}`,
-  description: `Book an appointment at Yogeshwari Hospital, ${siteConfig.city}. Choose paediatric surgery with Dr. Ramdas D. Nagargoje or eye care with Dr. Manisha Nagargoje (Sanap) and send your request in under a minute.`,
+  title: "Book Appointment in Aurangabad",
+  description:
+    "Book in Aurangabad with Dr. Ramdas Nagargoje (child surgery) or Dr. Manisha Nagargoje (eye care). Request a slot in 1 minute.",
   alternates: { canonical: "/appointment" },
+  openGraph: {
+    title: "Book Appointment in Aurangabad | Yogeshwari Hospital",
+    description:
+      "One form, one minute — request a paediatric surgery or eye-care slot in Chhatrapati Sambhajinagar.",
+    url: `${siteConfig.url}/appointment`,
+    images: [`${siteConfig.url}/opengraph-image`],
+  },
 };
 
 const crumbs = [
@@ -96,7 +104,7 @@ export default function AppointmentPage() {
                         <li key={dept.slug} className="flex gap-3.5">
                           <Image
                             src={doc.image}
-                            alt=""
+                            alt={`Portrait of ${doc.name}`}
                             width={52}
                             height={52}
                             className="size-13 shrink-0 rounded-xl object-cover object-top"

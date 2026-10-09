@@ -16,9 +16,17 @@ import { breadcrumbSchema, faqSchema, graph, hospitalSchema } from "@/lib/schema
 import { BookAppointmentButton } from "@/components/booking/BookAppointmentButton";
 
 export const metadata: Metadata = {
-  title: `Contact Yogeshwari Hospital — ${siteConfig.city}`,
-  description: `Contact Yogeshwari Hospital (Yogeshwari Surgical) in ${siteConfig.city}: address, phone, WhatsApp, OPD timings and directions. Dr. Ramdas Nagargoje — paediatric surgery — and eye care appointments.`,
+  title: "Contact & Address in Aurangabad",
+  description:
+    "Address, phone, WhatsApp, OPD timings & directions: Yogeshwari Hospital, Beed Bypass, Chhatrapati Sambhajinagar (Aurangabad).",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Yogeshwari Hospital, Aurangabad",
+    description:
+      "Find us on Beed Bypass, Chhatrapati Sambhajinagar — address, phone, timings and one-tap directions.",
+    url: `${siteConfig.url}/contact`,
+    images: [`${siteConfig.url}/opengraph-image`],
+  },
 };
 
 const crumbs = [

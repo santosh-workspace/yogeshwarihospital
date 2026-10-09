@@ -16,13 +16,25 @@ import { siteConfig } from "@/config/site";
 import { faqSchema, graph, medicalClinicSchema, personSchema, physicianSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} | Dr. Ramdas Nagargoje | ${siteConfig.city}`,
-  description: `Official website of Yogeshwari Hospital (Yogeshwari Surgical) in ${siteConfig.city} — paediatric surgery by Dr. Ramdas Nagargoje, eye care by Dr. Manisha Nagargoje, location, timings and appointments.`,
+  // absolute: bypasses the layout title template so the homepage title is
+  // exactly this — 44 chars, brand + doctor name first.
+  title: { absolute: "Yogeshwari Hospital | Dr. Ramdas Nagargoje" },
+  description:
+    "Official site of Yogeshwari Hospital, Chhatrapati Sambhajinagar (Aurangabad). Child surgery by Dr. Ramdas Nagargoje & eye care — book a visit.",
   alternates: { canonical: "/" },
   openGraph: {
     url: siteConfig.url,
-    title: `${siteConfig.name} | Dr. Ramdas Nagargoje | ${siteConfig.tagline} in ${siteConfig.city}`,
-    description: siteConfig.shortDescription,
+    title: "Yogeshwari Hospital | Dr. Ramdas Nagargoje",
+    description:
+      "Eye and paediatric surgery centre in Chhatrapati Sambhajinagar (Aurangabad): child surgery, eye care, timings and appointments.",
+    images: [
+      {
+        url: `${siteConfig.url}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Yogeshwari Hospital — Eye and Pediatric Surgery Centre, Chhatrapati Sambhajinagar",
+      },
+    ],
   },
 };
 

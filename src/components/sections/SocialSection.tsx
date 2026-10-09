@@ -51,60 +51,81 @@ export function SocialSection() {
             </Reveal>
 
             <Reveal variant="up" delay={0.15}>
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group mt-8 inline-flex items-center gap-3 rounded-2xl border border-edge bg-surface-2 p-3 pr-5 shadow-[var(--shadow-soft)] transition-all duration-400 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
-              >
-                <span className="grid size-11 place-items-center rounded-xl bg-linear-to-br from-[#F9CE34] via-[#EE2A7B] to-[#6228D7] text-lg text-white">
-                  <FaInstagram aria-hidden="true" />
-                </span>
-                <span>
-                  <span className="block text-[0.88rem] font-bold tracking-tight text-fg">
-                    See more on Instagram
+              {/* Shown only once the real Instagram URL is configured — an
+                  empty href would self-link the button. */}
+              {siteConfig.social.instagram && (
+                <a
+                  href={siteConfig.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group mt-8 inline-flex items-center gap-3 rounded-2xl border border-edge bg-surface-2 p-3 pr-5 shadow-[var(--shadow-soft)] transition-all duration-400 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
+                >
+                  <span className="grid size-11 place-items-center rounded-xl bg-linear-to-br from-[#F9CE34] via-[#EE2A7B] to-[#6228D7] text-lg text-white">
+                    <FaInstagram aria-hidden="true" />
                   </span>
-                  <span className="block text-[0.76rem] text-fg-subtle">
-                    Updates from the hospital
+                  <span>
+                    <span className="block text-[0.88rem] font-bold tracking-tight text-fg">
+                      See more on Instagram
+                    </span>
+                    <span className="block text-[0.76rem] text-fg-subtle">
+                      Updates from the hospital
+                    </span>
                   </span>
-                </span>
-                <FiArrowUpRight
-                  aria-hidden="true"
-                  className="text-fg-subtle transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
-              </a>
+                  <FiArrowUpRight
+                    aria-hidden="true"
+                    className="text-fg-subtle transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
+                </a>
+              )}
             </Reveal>
           </div>
 
-          {/* Feed preview */}
+          {/* Feed preview. Thumbnails link out only when the real Instagram URL
+              is configured; otherwise they render as plain figures so crawlers
+              and visitors never hit an empty self-link. */}
           <div className="lg:col-span-7">
             <Stagger className="grid grid-cols-3 gap-2.5 md:gap-3.5" amount={0.06}>
-              {preview.map((image, i) => (
-                <Reveal key={i} child variant="scale">
-                  <a
-                    href={siteConfig.social.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="View this post on Instagram"
-                    className="group relative block aspect-square overflow-hidden rounded-xl bg-surface-3 md:rounded-2xl"
-                  >
-                    <Image
-                      src={image.src}
-                      alt=""
-                      fill
-                      sizes="(max-width: 1024px) 32vw, 18vw"
-                      placeholder="blur"
-                      className="object-cover transition-transform duration-[900ms] ease-[var(--ease-out-expo)] group-hover:scale-110"
-                    />
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-0 grid place-items-center bg-ink-950/0 text-white opacity-0 transition-all duration-400 group-hover:bg-ink-950/45 group-hover:opacity-100"
+              {preview.map((image, i) =>
+                siteConfig.social.instagram ? (
+                  <Reveal key={i} child variant="scale">
+                    <a
+                      href={siteConfig.social.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View this post on Instagram"
+                      className="group relative block aspect-square overflow-hidden rounded-xl bg-surface-3 md:rounded-2xl"
                     >
-                      <FaInstagram className="text-2xl" />
-                    </span>
-                  </a>
-                </Reveal>
-              ))}
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        sizes="(max-width: 1024px) 32vw, 18vw"
+                        placeholder="blur"
+                        className="object-cover transition-transform duration-[900ms] ease-[var(--ease-out-expo)] group-hover:scale-110"
+                      />
+                      <span
+                        aria-hidden="true"
+                        className="absolute inset-0 grid place-items-center bg-ink-950/0 text-white opacity-0 transition-all duration-400 group-hover:bg-ink-950/45 group-hover:opacity-100"
+                      >
+                        <FaInstagram className="text-2xl" />
+                      </span>
+                    </a>
+                  </Reveal>
+                ) : (
+                  <Reveal key={i} child variant="scale">
+                    <figure className="relative block aspect-square overflow-hidden rounded-xl bg-surface-3 md:rounded-2xl">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        sizes="(max-width: 1024px) 32vw, 18vw"
+                        placeholder="blur"
+                        className="object-cover"
+                      />
+                    </figure>
+                  </Reveal>
+                ),
+              )}
             </Stagger>
           </div>
         </div>

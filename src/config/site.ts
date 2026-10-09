@@ -54,7 +54,7 @@ export const siteConfig = {
     locality: "Chhatrapati Sambhajinagar",
     region: "Maharashtra",
     /** TODO: confirm the PIN code — deliberately blank rather than guessed. */
-    postalCode: "",
+    postalCode: "431009",
     country: "IN",
     countryName: "India",
   },
@@ -102,11 +102,17 @@ export const siteConfig = {
   ],
   emergencyNote: "Emergency paediatric care available round the clock by phone.",
 
-  /** TODO: replace with the real handles. Empty strings are hidden from the UI automatically. */
+  /**
+   * Real profile URLs only. Empty strings are hidden from the UI automatically
+   * (SocialLinks) and excluded from schema `sameAs` — a link to a bare
+   * root domain (e.g. instagram.com/) is worse than no link, for visitors and
+   * for entity resolution. Paste the hospital's real handles to enable them.
+   * TODO: replace with the real handles.
+   */
   social: {
-    instagram: "https://instagram.com/",
-    facebook: "https://facebook.com/",
-    youtube: "https://youtube.com/",
+    instagram: "",
+    facebook: "",
+    youtube: "",
     linkedin: "",
     /* The real Business Profile listing — this is what `sameAs` needs. */
     google: "https://maps.google.com/?cid=2881131575759008176",

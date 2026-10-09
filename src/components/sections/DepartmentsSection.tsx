@@ -120,7 +120,7 @@ export function DepartmentsSection() {
                       <div className="mt-6 flex items-center gap-3 border-t border-edge pt-5">
                         <Image
                           src={doc.image}
-                          alt=""
+                          alt={`Portrait of ${doc.name}`}
                           width={48}
                           height={48}
                           className="size-12 rounded-full object-cover object-top ring-2 ring-surface-2"

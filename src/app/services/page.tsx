@@ -24,9 +24,17 @@ import {
 } from "@/components/sections/ServiceGrid";
 
 export const metadata: Metadata = {
-  title: `Services — Paediatric Surgery & Eye Care in ${siteConfig.city}`,
-  description: `Full service list at Yogeshwari Hospital, ${siteConfig.city}: newborn and infant surgery, laparoscopic procedures, paediatric urology, urodynamics, constipation clinic, eye examination, cataract and glaucoma screening, and emergency child surgery.`,
+  title: "Hospital Services in Aurangabad",
+  description:
+    "All 26 services at Yogeshwari Hospital, Aurangabad: child surgery, urology, eye exams, cataract & emergency care.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Hospital Services in Aurangabad | Yogeshwari Hospital",
+    description:
+      "26 services across paediatric surgery, eye care and emergency day-care in Chhatrapati Sambhajinagar.",
+    url: `${siteConfig.url}/services`,
+    images: [`${siteConfig.url}/opengraph-image`],
+  },
 };
 
 const crumbs = [

@@ -112,8 +112,21 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  ...(siteConfig.verification.google
-    ? { verification: { google: siteConfig.verification.google } }
+  /**
+   * Google Search Console verification. Paste the token Search Console gives
+   * you into the `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` env var (Vercel →
+   * Settings → Environment Variables) and redeploy — no code change needed.
+   * Falls back to the config value if the env var is unset.
+   */
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+  siteConfig.verification.google
+    ? {
+        verification: {
+          google:
+            process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+            siteConfig.verification.google,
+        },
+      }
     : {}),
   formatDetection: { telephone: true, address: true },
 };

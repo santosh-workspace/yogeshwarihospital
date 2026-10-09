@@ -15,9 +15,17 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: `Departments — Paediatric Surgery & Eye Care in ${siteConfig.city}`,
-  description: `Two specialist departments at Yogeshwari Hospital, ${siteConfig.city}: paediatric surgery with Dr. Ramdas D. Nagargoje, M.Ch., and eye care with Dr. Manisha Nagargoje (Sanap), D.O.M.S.`,
+  title: "Surgery & Eye Care in Aurangabad",
+  description:
+    "Two departments in Aurangabad: paediatric surgery (Dr. Ramdas Nagargoje) & eye care (Dr. Manisha Nagargoje) at Yogeshwari Hospital.",
   alternates: { canonical: "/departments" },
+  openGraph: {
+    title: "Surgery & Eye Care in Aurangabad | Yogeshwari Hospital",
+    description:
+      "Paediatric surgery and eye care side by side in Chhatrapati Sambhajinagar — see both specialists in one visit.",
+    url: `${siteConfig.url}/departments`,
+    images: [`${siteConfig.url}/opengraph-image`],
+  },
 };
 
 const crumbs = [
