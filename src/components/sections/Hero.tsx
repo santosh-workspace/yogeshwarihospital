@@ -41,6 +41,11 @@ export function Hero() {
   /**
    * One line per department, so neither reads as the junior partner. The
    * accent word in each is set in the display serif.
+   *
+   * The h1 opens with a small brand kicker ("Yogeshwari Hospital · city") so
+   * the homepage's top heading identifies the organization for branded
+   * queries — previously the h1 carried only the service statement and the
+   * brand lived outside any heading.
    */
   const headline: { lead: string; accent: string; tail?: string }[] = [
     { lead: "Specialist surgery for", accent: "children." },
@@ -83,6 +88,13 @@ export function Hero() {
             </motion.div>
 
             <h1 className="mt-7 text-display font-bold tracking-tight text-fg">
+              <motion.span
+                data-reveal
+                {...rise(0.08)}
+                className="mb-5 block text-[0.78rem] font-semibold uppercase tracking-[0.24em] text-fg-muted"
+              >
+                Yogeshwari Hospital · {siteConfig.city}
+              </motion.span>
               {headline.map((line, i) => (
                 <span key={line.accent} className="block overflow-hidden pb-[0.08em]">
                   <motion.span
