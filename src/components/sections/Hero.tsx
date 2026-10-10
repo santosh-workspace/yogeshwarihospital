@@ -40,12 +40,9 @@ export function Hero() {
 
   /**
    * One line per department, so neither reads as the junior partner. The
-   * accent word in each is set in the display serif.
-   *
-   * The h1 opens with a small brand kicker ("Yogeshwari Hospital · city") so
-   * the homepage's top heading identifies the organization for branded
-   * queries — previously the h1 carried only the service statement and the
-   * brand lived outside any heading.
+   * accent word in each is set in the display serif. The brand pill above
+   * them sits inside the h1, so the homepage's top heading identifies the
+   * organization for branded queries.
    */
   const headline: { lead: string; accent: string; tail?: string }[] = [
     { lead: "Specialist surgery for", accent: "children." },
@@ -69,8 +66,16 @@ export function Hero() {
           {/* 7/5 rather than 6/6: at 1440px a 6-col column is ~570px, which
               forces the third CTA onto its own line. */}
           <div className="lg:col-span-7">
-            <motion.div data-reveal {...rise(0.05)}>
-              <span className="inline-flex items-center gap-2.5 rounded-full border border-edge bg-white/80 py-1.5 pl-1.5 pr-4 text-[0.76rem] font-medium text-fg-muted shadow-[var(--shadow-soft)] backdrop-blur">
+            <h1 className="mt-7 text-display font-bold tracking-tight text-fg">
+              {/* Brand pill lives inside the h1 (valid phrasing content) so the
+                  top heading carries the organization name for branded queries.
+                  Visuals are unchanged: same pill, now reading the hospital
+                  name instead of the tagline. */}
+              <motion.span
+                data-reveal
+                {...rise(0.05)}
+                className="mb-7 flex w-fit items-center gap-2.5 rounded-full border border-edge bg-white/80 py-1.5 pl-1.5 pr-4 text-[0.76rem] font-medium leading-normal tracking-normal text-fg-muted shadow-[var(--shadow-soft)] backdrop-blur"
+              >
                 <span className="relative flex size-6 items-center justify-center">
                   <span
                     aria-hidden="true"
@@ -83,16 +88,6 @@ export function Hero() {
                   />
                   <span className="size-2 rounded-full bg-rose-500" />
                 </span>
-                {siteConfig.tagline} · {siteConfig.city}
-              </span>
-            </motion.div>
-
-            <h1 className="mt-7 text-display font-bold tracking-tight text-fg">
-              <motion.span
-                data-reveal
-                {...rise(0.08)}
-                className="mb-5 block text-[0.78rem] font-semibold uppercase tracking-[0.24em] text-fg-muted"
-              >
                 Yogeshwari Hospital · {siteConfig.city}
               </motion.span>
               {headline.map((line, i) => (
