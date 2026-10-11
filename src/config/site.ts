@@ -105,13 +105,13 @@ export const siteConfig = {
   /**
    * Real profile URLs only. Empty strings are hidden from the UI automatically
    * (SocialLinks) and excluded from schema `sameAs` — a link to a bare
-   * root domain (e.g. instagram.com/) is worse than no link, for visitors and
-   * for entity resolution. Paste the hospital's real handles to enable them.
-   * TODO: replace with the real handles.
+   * root domain (e.g. youtube.com/) is worse than no link, for visitors and
+   * for entity resolution. Instagram + Facebook verified by the owner;
+   * YouTube still outstanding.
    */
   social: {
-    instagram: "",
-    facebook: "",
+    instagram: "https://www.instagram.com/yogeshwarihospital/",
+    facebook: "https://www.facebook.com/yogeshwarihospital/",
     youtube: "",
     linkedin: "",
     /* The real Business Profile listing — this is what `sameAs` needs. */

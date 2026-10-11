@@ -1,7 +1,6 @@
 # Image slots
 
 The two **doctor portraits are the client's own photographs** — do not replace them.
-The untouched originals are in `doctors/_source/`.
 
 Everything else here is a **royalty-free placeholder** (Unsplash / Pexels licence — free
 for commercial use, no attribution required). The Google Business Profile could not be
@@ -27,10 +26,9 @@ If you change the alt text (you should, once these are real photos), edit
 
 | File | Ratio | Width | Where it appears | Priority to replace |
 | --- | --- | --- | --- | --- |
-| `hero-hospital.jpg` | 3:2 | 1920 | Homepage hero — the LCP image | **Highest** |
+| `hero-hospital.jpg` | 3:2 | 1920 | Homepage hero — the LCP image. Also serves the `hospital-exterior` slot (about, contact, location section), which was a byte-identical duplicate file — overwrite this one file to replace both | **Highest** |
 | `doctors/dr-ramdas-nagargoje.png` | 4:5 | 480 | Doctor cards, doctors page, paediatric surgery page | ✅ real photo |
 | `doctors/dr-manisha-nagargoje.png` | 4:5 | 546 | Doctor cards, doctors page, eye care page | ✅ real photo |
-| `hospital-exterior.jpg` | 3:2 | 1600 | About page, contact page, location section | High |
 | `consultation-room.jpg` | 3:2 | 1400 | Departments, about | High |
 | `ward.jpg` | 3:2 | 1400 | About — facility strip | Medium |
 | `patient-room.jpg` | 3:2 | 1400 | About — facility strip | Medium |

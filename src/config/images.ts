@@ -12,7 +12,8 @@
  */
 
 import heroHospital from "../../public/images/hero-hospital.png";
-import hospitalExterior from "../../public/images/hospital-exterior.png";
+/* hospital-exterior.png was a byte-identical duplicate of hero-hospital.png
+   (same md5) — removed; both slots share the one file below. */
 import ward from "../../public/images/ward.jpg";
 import patientRoom from "../../public/images/patient-room.jpg";
 import consultationRoom from "../../public/images/consultation-room.jpg";
@@ -41,8 +42,6 @@ import svcDiabeticEye from "../../public/images/svc-diabetic-eye.jpg";
 import svcDryEye from "../../public/images/svc-dry-eye.jpg";
 import svcEyeInfection from "../../public/images/svc-eye-infection.jpg";
 import svcChildVision from "../../public/images/svc-child-vision.jpg";
-import drRamdas from "../../public/images/doctors/dr-ramdas-nagargoje.png";
-import drManisha from "../../public/images/doctors/dr-manisha-nagargoje.png";
 
 export const img = {
   heroHospital: {
@@ -50,7 +49,7 @@ export const img = {
     alt: "Modern hospital building exterior — representative photograph",
   },
   hospitalExterior: {
-    src: hospitalExterior,
+    src: heroHospital,
     alt: "Hospital building exterior — representative photograph",
   },
   ward: {
@@ -169,16 +168,6 @@ export const img = {
   svcChildVision: {
     src: svcChildVision,
     alt: "A child wearing a trial frame during a vision screening",
-  },
-
-  /* Both portraits are the client's own photographs, cropped to 4:5. */
-  drRamdas: {
-    src: drRamdas,
-    alt: "Dr. Ramdas D. Nagargoje, Paediatric Surgeon, at Yogeshwari Hospital",
-  },
-  drManisha: {
-    src: drManisha,
-    alt: "Dr. Manisha Nagargoje (Sanap), Ophthalmologist, at Yogeshwari Hospital",
   },
 } as const;
 

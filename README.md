@@ -41,8 +41,9 @@ These are real and no longer placeholders:
   Children, Mumbai. Reg. No. 2002/03/1074.
 - **Dr. Manisha Nagargoje (Sanap)** — Ophthalmologist. M.B.B.S., D.O.M.S. (Mumbai).
   Reg. No. 2004/03/1498.
-- **Both doctor portraits** are the client's own photographs, cropped to 4:5. The
-  untouched originals are kept in `public/images/doctors/_source/`.
+- **Both doctor portraits** are the client's own photographs, cropped to 4:5.
+  (The untouched originals were removed from the repo during cleanup — recover
+  them from git history if a re-crop is ever needed.)
 - **The address**: Gut No. 91, Plot No. 4, Behind Bembde Hospital and Hotel MH 20,
   Sangram Nagar, Beed Bypass, Chhatrapati Sambhajinagar. Rendered from one place
   (`addressLines` in `src/config/site.ts`) so the footer, contact card, booking form,
@@ -160,7 +161,9 @@ in under `public/brand/`:
 | --- | --- | --- |
 | `logo-full.png` | The complete lockup, including the arc wordmark | Intro loader, and anywhere with ≥140px of room |
 | `logo-emblem.png` | Ring + baby + hands, arc wordmark removed | Header, footer, 404, favicon |
-| `logo-original-source.png` | The untouched file as supplied | Reference only |
+
+(The untouched supplied file, `logo-original-source.png`, was removed during
+cleanup — recover it from git history if the logo is ever re-supplied.)
 
 How they were derived, in case the logo is ever re-supplied:
 

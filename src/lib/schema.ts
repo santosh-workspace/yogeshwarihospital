@@ -133,7 +133,7 @@ export function hospitalSchema() {
     address: postalAddress,
     geo: geoCoordinates,
     hasMap: siteConfig.maps.placeUrl,
-    image: [abs("images/hero-hospital.png"), abs("images/hospital-exterior.png")],
+    image: [abs("images/hero-hospital.png")],
     logo: abs("icon.png"),
     priceRange: "₹₹",
     currenciesAccepted: "INR",

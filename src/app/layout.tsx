@@ -25,7 +25,9 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-jakarta",
-  weight: ["400", "500", "600", "700", "800"],
+  /* 800 is not used anywhere (heaviest weight in use is 700/bold) — loading
+     it would ship an extra font file for no reason. */
+  weight: ["400", "500", "600", "700"],
 });
 
 const instrument = Instrument_Serif({
