@@ -33,7 +33,9 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <Logo invert />
+            <Link href="/" aria-label={`${siteConfig.name} — home`}>
+              <Logo invert />
+            </Link>
             <p className="mt-6 max-w-sm text-[0.95rem] leading-relaxed text-white/60">
               {siteConfig.shortDescription}
             </p>

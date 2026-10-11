@@ -21,6 +21,8 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: new URL("/sitemap.xml", siteConfig.url).toString(),
-    host: siteConfig.url,
+    // NOTE: no `host` field — it would emit a `Host:` line, which is a
+    // Yandex-only directive that Googlebot flags as "Rule ignored".
+    // Canonical-host consolidation is handled by src/middleware.ts instead.
   };
 }

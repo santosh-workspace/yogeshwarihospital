@@ -238,7 +238,13 @@ export function Header() {
               className="fixed inset-y-0 right-0 z-[71] flex w-[min(23rem,92vw)] flex-col bg-surface-2 lg:hidden"
             >
               <div className="flex h-18 shrink-0 items-center justify-between border-b border-edge px-5">
-                <Logo compact />
+                <Link
+                  href="/"
+                  aria-label={`${siteConfig.name} — home`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <Logo compact />
+                </Link>
                 <button
                   ref={closeRef}
                   type="button"
